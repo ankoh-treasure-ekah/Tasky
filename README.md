@@ -1,0 +1,2 @@
+# Tasky
+learning angular
