@@ -1,0 +1,22 @@
+<app-navbar [notificationNumber]="notifications"
+[notificationList]="allNotifications">
+    
+</app-navbar>
+
+<app-header></app-header>
+
+<app-main></app-main>
+
+
+<div [ngSwitch]="role">
+    <div *ngSwitchCase="'user'">Welcome User!</div>
+    <div *ngSwitchCase="'admin'">
+        <app-rooms></app-rooms>
+    </div>
+    <div *ngSwitchDefault>
+        You are not authorised to view this page!
+    </div>
+
+</div>
+
+<app-footer></app-footer>

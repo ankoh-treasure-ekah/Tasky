@@ -1,0 +1,48 @@
+.auth-container {
+    background-color: teal;
+    color: white;
+    width: 30%;
+    margin: 0 auto;
+    border-radius: 1rem;
+    position: absolute;
+    top: 200px;
+    left: 38%;
+    
+
+    form.form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 3rem 0rem;
+
+        input.form-controls {
+            width: 60%;
+            border: none;
+            text-align: center;
+            outline: none;
+            border-radius: 1rem;
+            padding: 1rem 2rem;
+            background-color: rgba(255,166,0,0.689);
+            color: white;
+            font-weight: 700;
+        }
+
+        button.submit-btn {
+            border: none;
+            background-image: linear-gradient(to top right, rgb(94,6,6), rgba(9,9,74,0.92));
+            outline: none;
+            padding: 1rem 2rem;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+    }
+    
+}
+
+

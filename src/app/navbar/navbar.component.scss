@@ -1,0 +1,40 @@
+.navbarWors {
+    width: 100%;
+    background: black;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+
+    .logoNav {
+        padding-left: 2rem;
+        font-size: 1.1rem;
+
+        #portFolio {
+            color: rgb(22, 181, 22);
+        }
+
+    }
+
+    .navLinks {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .navItem {
+            font-size: 1.1rem;
+            list-style: none;
+            margin: 0rem 2rem;
+            cursor: pointer;
+
+            .navLink {
+                text-decoration: none;
+                color: white;
+                text-transform: capitalize;
+
+            }
+        }
+
+    }
+}
