@@ -19,10 +19,17 @@ export class TaskDetailsComponent {
   task!: ITask;
   taskId!: number;
 
+  username: string = '';
+  userIn: boolean = false;
+
   constructor(private route: Router ,private activatedRoute: ActivatedRoute, private taskService: TasksService){
     this.activatedRoute.params.subscribe((data) => {
       this.task = JSON.parse(data[0]) as any;
       this.taskId = JSON.parse(data[1])
+
+      this.username = data[2].split(',')[0];
+      this.userIn = true;
+
       console.log(data);
     })
   }

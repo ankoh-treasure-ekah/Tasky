@@ -14,9 +14,9 @@ export class NavbarComponent implements OnInit {
 
   notifications: number = 0;
 
-  userIn: boolean = false;
+  @Input() userIn: boolean = false;
 
-  userName = '';
+  @Input() userName = '';
 
 
   ngOnInit(): void {

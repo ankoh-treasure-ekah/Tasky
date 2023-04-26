@@ -53,5 +53,10 @@ export class UsersService {
       success: false
     }
   }
+
+  // passAccountDetails(data: string[]) {
+  //   console.log(data);
+  //   this.observer.next([data[0], data[1]])
+  // }
   
 }

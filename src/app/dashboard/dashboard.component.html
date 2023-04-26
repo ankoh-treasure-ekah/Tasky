@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar [userName]="email" [userIn]="userIn"></app-navbar>
 <section class="dashboard">
 
     <h1>Welcome To your Dashboard</h1>
@@ -8,7 +8,7 @@
     </p>
     
     <div class="task-btns">
-        <button routerLink="/dashboard/tasks" class="view-tasks">View Tasks</button>
+        <button (click)="viewTask()" class="view-tasks">View Tasks</button>
         <button routerLink="/dashboard/add-task" class="add-task">Add Task</button>
     </div>
     <div class="myTasks">

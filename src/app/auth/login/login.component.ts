@@ -30,7 +30,10 @@ export class LoginComponent {
     if(response) {
       alert('user logged in successfully');
       this.UserIn.emit(response);
-      this.router.navigate(['./dashboard']);
+      this.router.navigate(['./dashboard', {
+        email: this.email,
+        password: this.password
+      }]);
       return
     }
 

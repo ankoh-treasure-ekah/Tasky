@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TaskDifficult, TaskLevel, TaskStatus } from 'src/app/constants/constants.enum';
 import { ITask } from 'src/app/interfaces/task.interface';
 import { TasksService } from 'src/app/services/tasks.service';
+import { UsersService } from 'src/app/services/users/users.service';
 
 @Component({
   selector: 'app-task-list',
@@ -11,7 +12,7 @@ import { TasksService } from 'src/app/services/tasks.service';
 })
 export class TaskListComponent implements OnInit, OnChanges {
 
-  constructor(private route: Router ,private taskService: TasksService, private activatedRoute: ActivatedRoute, private cd: ChangeDetectorRef) {
+  constructor(private route: Router ,private taskService: TasksService, private activatedRoute: ActivatedRoute, private cd: ChangeDetectorRef, private usersService: UsersService) {
 
     
 
@@ -23,6 +24,11 @@ export class TaskListComponent implements OnInit, OnChanges {
   }
 
   currentTask!: number;
+
+  @Input() username: string = '';
+  @Input() password: string = '';
+
+  canDelete: boolean = false;
 
   @Input() tasks: ITask[] = [
     // {
@@ -49,7 +55,7 @@ export class TaskListComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((data) => {
-
+      console.log(data);
       if(data['id']) {
 
         const updated = this.taskService.deleteTask(data['id']);
@@ -60,6 +66,13 @@ export class TaskListComponent implements OnInit, OnChanges {
   
         alert('could not delete task');
       }
+
+      if(data['username'] && data['password']) {
+        this.username = data['username'];
+        this.password = data['password'];
+      }
+
+
 
     })
 
@@ -79,7 +92,7 @@ export class TaskListComponent implements OnInit, OnChanges {
     this.currentTask = this.tasks.indexOf(task)
     console.log(task);
 
-    this.route.navigate(['/dashboard/tasks/task-detail', [JSON.stringify(task), this.currentTask]])
+    this.route.navigate(['/dashboard/task-detail', [JSON.stringify(task), this.currentTask, [this.username, this.password]]])
     
   }
 

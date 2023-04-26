@@ -29,16 +29,17 @@ const routes: Routes = [
     path: "add-task",
     component: AddTaskComponent
   },
-  {
-    path: 'dashboard/tasks/task-detail',
-    component: TaskDetailsComponent
-  },
+  
 
   {
     path: "dashboard",
     component: DashboardComponent,
     canActivate: [AuthguardService],
     children: [
+      {
+        path: 'task-detail',
+        component: TaskDetailsComponent
+      },
       {
         path: 'tasks',
         component: TaskListComponent,
