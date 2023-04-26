@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<section class="dashboard">
+
+    <h1>Welcome To your Dashboard</h1>
+    
+    <p>here you can view your tasks by clicking the view tasks Button on your left or 
+        add a task by clicking on the add task button on your right
+    </p>
+    
+    <div class="task-btns">
+        <button routerLink="/dashboard/tasks" class="view-tasks">View Tasks</button>
+        <button routerLink="/dashboard/add-task" class="add-task">Add Task</button>
+    </div>
+    <div class="myTasks">
+        <router-outlet></router-outlet>
+    </div>
+</section>
+<app-footer></app-footer>
+

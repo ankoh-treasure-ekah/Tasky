@@ -1,0 +1,42 @@
+section.add-task-section {
+    display: flex;
+    justify-content: center;
+}
+
+form.add-task {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color:black;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+
+    input, select, textarea {
+        width: 15rem;
+        padding: 1rem 1rem;
+        margin: 1rem 1rem;
+        border: none;
+        outline: none;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+    }
+
+    button {
+        padding: 1rem;
+        background-color: rgb(22, 181, 22);
+        color: white;
+        border: none;
+        outline: none;
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: all 0.5s ease;
+
+        
+        &:hover {
+            background-color: rgba(22, 181, 22, 0.5);
+        }
+    }
+
+}

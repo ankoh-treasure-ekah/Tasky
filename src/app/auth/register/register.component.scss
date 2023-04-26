@@ -1,0 +1,58 @@
+.auth-container {
+    background-color: black;
+    color: white;
+    width: 30%;
+    margin: 0 auto;
+    border-radius: 1rem;
+    position: absolute;
+    top: 200px;
+    left: 38%;
+    
+    button.submit-btn {
+        border: none;
+        background-color: rgb(22, 181, 22);
+        outline: none;
+        padding: 1rem 2rem;
+        cursor: pointer;
+        border-radius: 1rem;
+    }
+
+    button.undo-btn, button.redo-btn {
+        margin-left: 1rem;
+        margin-top: 1rem;
+        color: #fff;
+        
+    }
+
+    form.form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 3rem 0rem;
+
+        input.form-controls {
+            width: 60%;
+            border: none;
+            text-align: center;
+            outline: none;
+            border-radius: 1rem;
+            padding: 1rem 2rem;
+            background-color: white;
+            color: black;
+            font-weight: 700;
+        }
+
+        
+
+        .submit-btn:hover {
+            background-color: rgb(22, 181, 22);
+            color: white;
+            border-radius: 1rem;
+        }
+    }
+    
+}
+
+

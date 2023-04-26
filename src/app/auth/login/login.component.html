@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+<div class="login-container">
+    <form class="form">
+        <input [(ngModel)]="email" type="text" name="email" class="form-input" placeholder="email">
+        <input [(ngModel)]="password" type="password" name="password" class="form-input" placeholder="password">
+        <button class="submit" (click)="login($event)">Login</button>
+    </form>
+</div>
+
+<app-footer></app-footer>

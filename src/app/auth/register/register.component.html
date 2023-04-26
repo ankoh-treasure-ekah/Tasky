@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+
+<section class="auth-container">
+    <!-- <button class="undo-btn submit-btn">Undo</button>
+    <button class="redo-btn submit-btn">Redo</button> -->
+    <form class="form">
+        <input [(ngModel)]="username" type="text" name = "username" class="form-controls" placeholder="Username">
+        <input [(ngModel)]="email" type="text" name="email"  class="form-controls" placeholder="Email">
+        <input [(ngModel)]="password" type="password" name="password"  class="form-controls" placeholder="Password">
+
+        <button type="button" class="submit-btn" (click)="register($event)">Register</button>
+    </form>
+</section>
+
+<app-footer></app-footer>

@@ -30,6 +30,7 @@ export class LocalStoreService {
       }
     
       response = JSON.parse(<any>response);
+      response.push(data)
 
       this.STORE.setItem(key, JSON.stringify(response)); 
       return true;
@@ -52,6 +53,11 @@ export class LocalStoreService {
         data: null
       }
     }
+  }
+
+  update(key: string, data: any) {
+    this.STORE.setItem(key, JSON.stringify(data));
+    return true
   }
 
 }

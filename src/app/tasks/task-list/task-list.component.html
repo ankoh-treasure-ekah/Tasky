@@ -1,0 +1,19 @@
+<!-- <p>task-list works!</p> -->
+<!-- <router-outlet></router-outlet> -->
+
+<section class="tasks">
+    <div  #taskDetail (click)="editTask(task)" class="task-item" *ngFor="let task of tasks">
+        <h1> {{task?.name}} </h1>
+        <p> {{task?.description}} </p>
+        <p>Task Status : 
+            <span [style]="task.status.startsWith('SUCCESS') ? 'background-color: green' : 'background-color: yellow'">{{ task.status }}</span>
+        </p>
+
+        <p>Task difficulty : 
+            <span [style]="task.difficulty.startsWith('HIGH') ? (task.difficulty.startsWith('MEDIUM') ? 'background-color: cyan' : 'background-color: red') : 'background-color: yellow' ">{{ task.difficulty }}</span>
+        </p>
+        <img [src]=" task?.image " alt="stupid">
+    </div>
+</section>
+
+<router-outlet></router-outlet>

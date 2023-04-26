@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+
+<section class="task-detail">
+    <table>
+        <tr>
+            <th>name</th>
+            <th>description</th>
+            <th>userId</th>
+            <th>status</th>
+            <th>startDate</th>
+            <th>dueDate</th>
+            <th>level</th>
+            <th>difficulty</th>
+        </tr>
+        <tr>
+            <td> {{task.name}} </td>
+            <td> {{task.description}} </td>
+            <td> {{task.userId}} </td>
+            <td> {{task.status}} </td>
+            <td> {{task.startDate}} </td>
+            <td> {{task.dueDate}} </td>
+            <td> {{task.level}} </td>
+            <td> {{task.difficulty}} </td>
+        </tr>
+    </table>
+
+    <button (click)="deleteTask(task)" class="delete-task">Delete task</button>
+</section>
+
+<app-footer></app-footer>
+

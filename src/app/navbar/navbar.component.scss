@@ -7,6 +7,29 @@
     align-items: center;
     color: white;
 
+    .login-nav {
+        padding-right: 2rem;
+
+        li {
+            list-style-type: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: inline-block;
+            padding: 1.2rem;
+
+            a {
+                text-decoration: none;
+                color: white;
+
+                &:hover {
+                    color:rgb(22, 181, 22);
+                }
+            }
+
+            
+        }
+    }
+
     .logoNav {
         padding-left: 2rem;
         font-size: 1.1rem;
@@ -32,9 +55,38 @@
                 text-decoration: none;
                 color: white;
                 text-transform: capitalize;
+                
+                &:hover {
+                    color:rgb(22, 181, 22);
+                }
 
             }
         }
 
+    }
+
+    .user-pane {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-right: 2rem;
+        align-items: center;
+
+        button.logout-btn {
+            padding: 1rem;
+            background-color: rgb(22, 181, 22);
+            border-radius: 1rem;
+            color: white;
+            transition: all 0.5s ease;
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba(22, 181, 22, 0.5);;
+            }
+
+
+        }
     }
 }

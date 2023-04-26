@@ -23,3 +23,4 @@ import { IRoomList } from '../rooms';
     this.roomSelected.emit(room);
   }
 }
+

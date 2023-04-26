@@ -5,6 +5,13 @@
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
 }
+
+body {
+    min-height: 100vh;
+    position: relative;
+}
+
+
 .container{
     width: 95%;
     height: 80vh;
@@ -41,3 +48,8 @@
     background-color: tomato;
     color: white;
 }
+
+
+// section.header {
+
+// }

@@ -1,17 +1,15 @@
-<app-navbar [notificationNumber]="notifications"
-[notificationList]="allNotifications">
-    
-</app-navbar>
+<!-- <app-navbar></app-navbar> -->
+<!-- 
 
-<app-header></app-header>
+<app-header [title]="title"></app-header> -->
 
-<app-main></app-main>
-
+<!-- <app-main></app-main> -->
+<!-- <router-outlet></router-outlet> -->
 
 <div [ngSwitch]="role">
     <div *ngSwitchCase="'user'">Welcome User!</div>
     <div *ngSwitchCase="'admin'">
-        <app-rooms></app-rooms>
+        <router-outlet></router-outlet>
     </div>
     <div *ngSwitchDefault>
         You are not authorised to view this page!
@@ -19,4 +17,6 @@
 
 </div>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
+
+

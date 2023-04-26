@@ -1,0 +1,16 @@
+
+<section class="add-task-section">
+    <form class="add-task">
+        <input [(ngModel)]="task.name" type="text" name="name" class="form-controls">
+        <textarea [(ngModel)]="task.description" placeholder="Task desctiption" type="text" name="description" class="form-controls" rows="3" cols="10"></textarea>
+        <input [(ngModel)]="task.dueDate" type="datetime" name="dueDate" class="form-controls" placeholder="Task-due-date">
+        <input [(ngModel)]="task.startDate" type="datetime" name="startDate" class="form-controls" placeholder="Task-start-date">
+        <select [(ngModel)]="task.difficulty" name="difficulty" id="difficulty">
+            <option value="high">high</option>
+            <option value="medium">medium</option>
+            <option value="standard" selected>standard</option>
+        </select>
+        <img src="" alt="task-image" class="form-controls">
+        <button (click)="saveTask()">Add task</button>
+    </form>
+</section>

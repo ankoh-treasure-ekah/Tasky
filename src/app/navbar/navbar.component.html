@@ -1,24 +1,34 @@
 <nav class="navbarWors">
     <div class="logoNav">
-        <h1><span id="portFolio">Port</span>folio</h1>
+        <h1><span id="portFolio">Tas</span>ky</h1>
         </div>
-    <ul class="navLinks">
-        <li class="navItem"><a href="Home" class="navLink">Home</a></li>
-        <li class="navItem"><a href="Contact" class="navLink">Contact</a></li>
-        <li class="navItem"><a href="About" class="navLink">About</a></li>
-        <li class="navItem"><a href="Portfolio" class="navLink">Portfolio</a></li>
-        <li class="navItem"><a href="#" class="navLink">
-            <span style="color: yellowgreen;">
-                <small>
-                    <i>
-                        {{notificationNumber}}
-                    </i>
-                </small>
-            </span>
-            notification
-        </a></li>
+        <ul class="navLinks">
+            <li class="navItem"><a routerLink="/" href="Home" class="navLink">Home</a></li>
+            <li class="navItem"><a href="Contact" class="navLink">Contact</a></li>
+            <li class="navItem"><a href="About" class="navLink">About</a></li>
+            <li class="navItem"><a href="Portfolio" class="navLink">Portfolio</a></li>
+            <li class="navItem"><a class="navLink">
+                <span style="color: yellowgreen;">
+                    <small>
+                        <i>
+                            {{notifications}}
+                        </i>
+                    </small>
+                </span>
+                notification
+            </a></li>
 
+        </ul>
+    <ul class="login-nav">
+        <li *ngIf="!userIn" class="login"><a href="login" routerLink="/login">Login</a></li>
+        <li *ngIf="!userIn" class="sign-up"><a href="sign up" routerLink="/signup">Sign up</a></li>
     </ul>
+    <div *ngIf="userIn" class="user-pane">
+        <p class="user-name"> {{userName}} </p>
+        <button (click)="logout($event)" class="logout-btn">Logout</button>
+    </div>
+
+
 </nav>
 <!-- <nav class="secondNav">
 
