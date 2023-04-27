@@ -40,6 +40,11 @@ export class TasksService {
     console.log(taskId);
     const response = this.store.get('Tasks');
     console.log(response.data);
+
+    const previousValue = response.data;
+
+    this.store.sessionStorage('recover' ,previousValue);
+
     const newTask = [...response.data.splice(0, taskId), ...response.data.splice(taskId+1, response.data.length)]
     console.log(newTask)
 
@@ -51,6 +56,17 @@ export class TasksService {
     return false;
     // this.observer.next(task);
 
+  }
+
+  unDo() {
+    const response = this.store.sessionStorageGet('recover');
+    if(response) {
+      console.log(response.data);
+      const newResponse = this.store.update('Tasks', response.data);
+      this.store.clearSStorage();
+      return newResponse;
+    }
+    return false;
   }
 
   //get one

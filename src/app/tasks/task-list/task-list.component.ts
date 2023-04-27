@@ -28,6 +28,8 @@ export class TaskListComponent implements OnInit, OnChanges {
   @Input() username: string = '';
   @Input() password: string = '';
 
+  canUndo: boolean = false;
+
   canDelete: boolean = false;
 
   @Input() tasks: ITask[] = [
@@ -59,8 +61,10 @@ export class TaskListComponent implements OnInit, OnChanges {
       if(data['id']) {
 
         const updated = this.taskService.deleteTask(data['id']);
+
         if(updated) {
           alert('task deleted successfully');
+          this.canUndo = true;
           return
         }
   
@@ -94,6 +98,17 @@ export class TaskListComponent implements OnInit, OnChanges {
 
     this.route.navigate(['/dashboard/task-detail', [JSON.stringify(task), this.currentTask, [this.username, this.password]]])
     
+  }
+
+  unDo() {
+    const response = this.taskService.unDo();
+    if(response) {
+      const allTasks = this.taskService.getTasks();
+      this.tasks = [...allTasks.data];
+      console.log('task recovers=ed');
+
+      this.canUndo = false;
+    }
   }
 
 

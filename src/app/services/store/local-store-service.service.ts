@@ -8,7 +8,8 @@ export class LocalStoreService {
 
   constructor() { }
 
-  private STORE = localStorage; // this is good dev work
+  private STORE = localStorage;
+  private sessionStore = sessionStorage; // this is good dev work
 
   set(key: string, data: any) {
     try {
@@ -58,6 +59,32 @@ export class LocalStoreService {
   update(key: string, data: any) {
     this.STORE.setItem(key, JSON.stringify(data));
     return true
+  }
+
+  sessionStorageGet(key: string) {
+    try {
+      const response = JSON.parse(this.sessionStore.getItem(key) ?? '');
+      return {
+        status: true,
+        data: response
+      }
+
+    }
+    catch (error) {
+      return {
+        status: false,
+        data: null
+      }
+    }
+  }
+
+  sessionStorage(key: string ,data: any) {
+    this.sessionStore.setItem(key, JSON.stringify(data));
+    return true;
+  }
+
+  clearSStorage() {
+    this.sessionStore.clear();
   }
 
 }

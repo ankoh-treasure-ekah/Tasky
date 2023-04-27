@@ -1,6 +1,7 @@
 <!-- <p>task-list works!</p> -->
 <!-- <router-outlet></router-outlet> -->
 
+<button (click)="unDo()" *ngIf="canUndo" class="undo-delete">Undo</button>
 <section class="tasks">
     <div  #taskDetail (click)="editTask(task)" class="task-item" *ngFor="let task of tasks">
         <h1> {{task?.name}} </h1>
