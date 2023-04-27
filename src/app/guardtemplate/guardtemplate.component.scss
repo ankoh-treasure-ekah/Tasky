@@ -1,0 +1,23 @@
+section.section_404-page {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+
+    h1 {
+        font-size: 15rem;
+        color: red;
+    }
+
+    p {
+        font-size: 5rem;
+
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+}

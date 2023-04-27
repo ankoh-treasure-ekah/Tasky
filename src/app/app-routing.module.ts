@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthguardService } from './services/authguard.service';
 import { TaskDetailsComponent } from './tasks/task-details/task-details.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { GuardtemplateComponent } from './guardtemplate/guardtemplate.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,14 @@ const routes: Routes = [
       }
       
     ]
+  },
+  {
+    path: 'page-404',
+    component: GuardtemplateComponent
+  },
+  {
+    path: '**',
+    component: GuardtemplateComponent
   }
 ];
 
