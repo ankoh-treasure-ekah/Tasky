@@ -24,11 +24,18 @@ export class TaskDetailsComponent {
 
   constructor(private route: Router ,private activatedRoute: ActivatedRoute, private taskService: TasksService){
     this.activatedRoute.params.subscribe((data) => {
-      this.task = JSON.parse(data[0]) as any;
-      this.taskId = JSON.parse(data[1])
+      // this.task = JSON.parse(data[0]) as any;
+      // this.taskId = JSON.parse(data[1])
 
-      this.username = data[2].split(',')[0];
-      this.userIn = true;
+      const response = this.taskService.getTasks();
+      const myTasks = response.data;
+
+      this.task = myTasks[data[0]];
+
+      console.log(myTasks[data[0]].name);
+
+      // this.username = data[2].split(',')[0];
+      // this.userIn = true;
 
       console.log(data);
     })

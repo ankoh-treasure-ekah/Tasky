@@ -96,7 +96,7 @@ export class TaskListComponent implements OnInit, OnChanges {
     this.currentTask = this.tasks.indexOf(task)
     console.log(task);
 
-    this.route.navigate(['/dashboard/task-detail', [JSON.stringify(task), this.currentTask, [this.username, this.password]]])
+    this.route.navigate(['/dashboard/task-detail', [this.currentTask]])
     
   }
 
